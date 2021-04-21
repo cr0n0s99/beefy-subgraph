@@ -1,0 +1,63 @@
+specVersion: 0.0.1
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: BIFI Maxi
+    network: bsc
+    source:
+      address: '0xf7069e41C57EcC5F122093811d8c75bdB5f7c14e'
+      abi: BeefyVaultV2
+      startBlock: 2612277
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.1
+      language: wasm/assemblyscript
+      entities:
+        - Vault
+        - Deposit
+        - Withdraw
+        - Harvest
+        - Transfer
+        - AccountVaultBalance
+        - Account
+        - Token
+      abis:
+        - name: BeefyVaultV2
+          file: ./abis/BeefyVaultV2.json
+        - name: Strategy
+          file: ./abis/Strategy.json
+        - name: ERC20
+          file: ./abis/ERC20.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleShareTransfer
+        # - event: UpgradeStrat(address)
+        #   handler: handleUpgradeStrat
+      file: ./src/mapping.ts
+templates:
+  - name: Strategy
+    kind: ethereum/contract
+    network: bsc
+    source:
+      abi: Strategy
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.1
+      language: wasm/assemblyscript
+      file: ./src/mapping.ts
+      entities:
+        - Vault
+        - Deposit
+        - Withdraw
+        - Harvest
+        - Transfer
+        - AccountVaultBalance
+        - Account
+        - Token
+      abis:
+        - name: Strategy
+          file: ./abis/Strategy.json
+      eventHandlers:
+        - event: StratHarvest(indexed address)
+          handler: handleHarvest

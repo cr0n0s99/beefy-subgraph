@@ -11,7 +11,12 @@ Subgraph to track beefy.finance vaults metrics
 
 ## Running
 
+It is assumed that you have installed the graph-cli to run the following set of npm / yarn scripts.
+
+### Scripts
+
 - `yarn` – install dependencies
+- `yarn build` - compile subgraph
 - `yarn codegen` – generate code
 - `yarn create` – allocate subgraph name in Graph Node
 - `yarn deploy` - deploy supgraph to Graph Node

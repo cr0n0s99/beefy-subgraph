@@ -13,8 +13,8 @@ var mutableVaultsCounter = 0;
 
 for (const vault of vaults) {
   let currentVaultYaml = {
-    kind: 'ethereum/events',
-    name: vault.name,
+    kind: 'ethereum/contract',
+    name: vault.id,
     network: 'bsc',
     source: {
       address: vault.earnedTokenAddress,
@@ -63,7 +63,7 @@ for (const vault of vaults) {
 }
 
 let subgraphYaml = {
-  specVersion: apiVersion,
+  specVersion: '0.0.2',
   schema: {
     file: './schema.graphql'
   },

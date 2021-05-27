@@ -24,6 +24,22 @@ It is assumed that you have installed the graph-cli to run the following set of 
 
 See `package.json` for local deployment.
 
+#### Debugging Deployment
+
+We can debug fatal errors on deployment in the subgraph via the following commands.
+
+##### Current Version
+
+```bash
+curl --location --request POST 'https://api.thegraph.com/index-node/graphql' --data-raw '{"query":"{ indexingStatusForCurrentVersion(subgraphName: \"<SUBGRAPH-NAME>\") { subgraph fatalError { message } nonFatalErrors {message } } }"}'
+```
+
+##### Pending Version
+
+```bash
+curl --location --request POST 'https://api.thegraph.com/index-node/graphql'  --data-raw '{"query":"{ indexingStatusForPendingVersion(subgraphName: \"<SUBGRAPH-NAME>\") { subgraph fatalError { message } nonFatalErrors {message } } }"}'
+```
+
 ## Entities
 
 ### Vault

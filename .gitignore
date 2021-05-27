@@ -6,4 +6,4 @@ node_modules/
 .idea
 
 # Pulled into local from other beefy-dashboard
-./getVaults.js
+getVaults.mjs

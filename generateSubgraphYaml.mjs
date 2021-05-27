@@ -1,7 +1,7 @@
 import yaml from "js-yaml"
 import fs from "fs"
 
-import { getVaults } from "./getVaults.js";
+import { getVaults } from "./getVaults.mjs";
 
 const apiVersion = '0.0.4'
 const outputFilename = './subgraph.yaml'

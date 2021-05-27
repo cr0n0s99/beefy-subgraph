@@ -2,9 +2,9 @@
   "name": "beefy-subgraph",
   "version": "0.1.0",
   "license": "MIT",
-  "type": "module",
   "scripts": {
-    "codegen": "graph codegen",
+    "vaultgen": "curl -o getVaults.mjs https://raw.githubusercontent.com/beefyfinance/beefy-dashboard/master/src/utils/getVaults.js && node generateSubgraphYaml.mjs",
+    "codegen": "yarn vaultgen && graph codegen",
     "build": "graph build",
     "deploy": "graph deploy $GRAPH_PATH --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ --access-token $ACCESS_TOKEN",
     "create": "graph create $GRAPH_PATH --node https://api.thegraph.com/deploy/",

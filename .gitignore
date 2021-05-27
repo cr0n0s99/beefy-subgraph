@@ -4,3 +4,6 @@ node_modules/
 
 .envrc
 .idea
+
+# Pulled into local from other beefy-dashboard
+./getVaults.js

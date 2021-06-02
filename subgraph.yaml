@@ -34,10 +34,320 @@ dataSources:
           handler: handleShareTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
+    name: cakev2-ktn-bnb
+    network: bsc
+    source:
+      address: '0xBD322911Bd9E944743CDb88Cb5f9da33B5CD55BE'
+      abi: BeefyVaultV2
+      startBlock: 2612277
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Vault
+        - Deposit
+        - Withdraw
+        - Harvest
+        - Transfer
+        - AccountVaultBalance
+        - Account
+        - Token
+      abis:
+        - name: BeefyVaultV2
+          file: ./abis/BeefyVaultV2.json
+        - name: Strategy
+          file: ./abis/Strategy.json
+        - name: ERC20
+          file: ./abis/ERC20.json
+      eventHandlers:
+        - event: 'Transfer(indexed address,indexed address,uint256)'
+          handler: handleShareTransfer
+      file: ./src/mapping.ts
+  - kind: ethereum/contract
+    name: ellipsis-eps
+    network: bsc
+    source:
+      address: '0x0CDAf84f90F0BBFF225A82D7165967Fff93A7bea'
+      abi: BeefyVaultV2
+      startBlock: 2612277
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Vault
+        - Deposit
+        - Withdraw
+        - Harvest
+        - Transfer
+        - AccountVaultBalance
+        - Account
+        - Token
+      abis:
+        - name: BeefyVaultV2
+          file: ./abis/BeefyVaultV2.json
+        - name: Strategy
+          file: ./abis/Strategy.json
+        - name: ERC20
+          file: ./abis/ERC20.json
+      eventHandlers:
+        - event: 'Transfer(indexed address,indexed address,uint256)'
+          handler: handleShareTransfer
+      file: ./src/mapping.ts
+  - kind: ethereum/contract
     name: dopple-dop-lp
     network: bsc
     source:
       address: '0x8464365600d6A1b86A7f7c80DCD63AFa861069dB'
+      abi: BeefyVaultV2
+      startBlock: 2612277
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Vault
+        - Deposit
+        - Withdraw
+        - Harvest
+        - Transfer
+        - AccountVaultBalance
+        - Account
+        - Token
+      abis:
+        - name: BeefyVaultV2
+          file: ./abis/BeefyVaultV2.json
+        - name: Strategy
+          file: ./abis/Strategy.json
+        - name: ERC20
+          file: ./abis/ERC20.json
+      eventHandlers:
+        - event: 'Transfer(indexed address,indexed address,uint256)'
+          handler: handleShareTransfer
+      file: ./src/mapping.ts
+  - kind: ethereum/contract
+    name: cakev2-tusd-busd
+    network: bsc
+    source:
+      address: '0x62Cce60Bca43926e062ca2A4e2DcdAbEA5D2EAD2'
+      abi: BeefyVaultV2
+      startBlock: 2612277
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Vault
+        - Deposit
+        - Withdraw
+        - Harvest
+        - Transfer
+        - AccountVaultBalance
+        - Account
+        - Token
+      abis:
+        - name: BeefyVaultV2
+          file: ./abis/BeefyVaultV2.json
+        - name: Strategy
+          file: ./abis/Strategy.json
+        - name: ERC20
+          file: ./abis/ERC20.json
+      eventHandlers:
+        - event: 'Transfer(indexed address,indexed address,uint256)'
+          handler: handleShareTransfer
+      file: ./src/mapping.ts
+  - kind: ethereum/contract
+    name: mdex-bsc-bnb-usdt
+    network: bsc
+    source:
+      address: '0x7638db36fc21E030D5F8158B27181c3b27418bE2'
+      abi: BeefyVaultV2
+      startBlock: 2612277
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Vault
+        - Deposit
+        - Withdraw
+        - Harvest
+        - Transfer
+        - AccountVaultBalance
+        - Account
+        - Token
+      abis:
+        - name: BeefyVaultV2
+          file: ./abis/BeefyVaultV2.json
+        - name: Strategy
+          file: ./abis/Strategy.json
+        - name: ERC20
+          file: ./abis/ERC20.json
+      eventHandlers:
+        - event: 'Transfer(indexed address,indexed address,uint256)'
+          handler: handleShareTransfer
+      file: ./src/mapping.ts
+  - kind: ethereum/contract
+    name: mdex-bsc-fil-usdt
+    network: bsc
+    source:
+      address: '0xE4E5795596E153e8f39D35Ff8559ae4D7bd03622'
+      abi: BeefyVaultV2
+      startBlock: 2612277
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Vault
+        - Deposit
+        - Withdraw
+        - Harvest
+        - Transfer
+        - AccountVaultBalance
+        - Account
+        - Token
+      abis:
+        - name: BeefyVaultV2
+          file: ./abis/BeefyVaultV2.json
+        - name: Strategy
+          file: ./abis/Strategy.json
+        - name: ERC20
+          file: ./abis/ERC20.json
+      eventHandlers:
+        - event: 'Transfer(indexed address,indexed address,uint256)'
+          handler: handleShareTransfer
+      file: ./src/mapping.ts
+  - kind: ethereum/contract
+    name: cakev2-vrt-bnb
+    network: bsc
+    source:
+      address: '0xA8cC688E9B387b0cBe41D0CcF55875CE2318695A'
+      abi: BeefyVaultV2
+      startBlock: 2612277
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Vault
+        - Deposit
+        - Withdraw
+        - Harvest
+        - Transfer
+        - AccountVaultBalance
+        - Account
+        - Token
+      abis:
+        - name: BeefyVaultV2
+          file: ./abis/BeefyVaultV2.json
+        - name: Strategy
+          file: ./abis/Strategy.json
+        - name: ERC20
+          file: ./abis/ERC20.json
+      eventHandlers:
+        - event: 'Transfer(indexed address,indexed address,uint256)'
+          handler: handleShareTransfer
+      file: ./src/mapping.ts
+  - kind: ethereum/contract
+    name: cakev2-ez-bnb
+    network: bsc
+    source:
+      address: '0x3Ee4b86Bf6BbceBf46695C0F3703F87Ff18a776b'
+      abi: BeefyVaultV2
+      startBlock: 2612277
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Vault
+        - Deposit
+        - Withdraw
+        - Harvest
+        - Transfer
+        - AccountVaultBalance
+        - Account
+        - Token
+      abis:
+        - name: BeefyVaultV2
+          file: ./abis/BeefyVaultV2.json
+        - name: Strategy
+          file: ./abis/Strategy.json
+        - name: ERC20
+          file: ./abis/ERC20.json
+      eventHandlers:
+        - event: 'Transfer(indexed address,indexed address,uint256)'
+          handler: handleShareTransfer
+      file: ./src/mapping.ts
+  - kind: ethereum/contract
+    name: cakev2-kalm-bnb
+    network: bsc
+    source:
+      address: '0x487D8014F8803757e0542e127854DEBd213A39e5'
+      abi: BeefyVaultV2
+      startBlock: 2612277
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Vault
+        - Deposit
+        - Withdraw
+        - Harvest
+        - Transfer
+        - AccountVaultBalance
+        - Account
+        - Token
+      abis:
+        - name: BeefyVaultV2
+          file: ./abis/BeefyVaultV2.json
+        - name: Strategy
+          file: ./abis/Strategy.json
+        - name: ERC20
+          file: ./abis/ERC20.json
+      eventHandlers:
+        - event: 'Transfer(indexed address,indexed address,uint256)'
+          handler: handleShareTransfer
+      file: ./src/mapping.ts
+  - kind: ethereum/contract
+    name: jetswap-wings
+    network: bsc
+    source:
+      address: '0x5e784882E8D2ac69777713f0e71100741b8aC2F6'
+      abi: BeefyVaultV2
+      startBlock: 2612277
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Vault
+        - Deposit
+        - Withdraw
+        - Harvest
+        - Transfer
+        - AccountVaultBalance
+        - Account
+        - Token
+      abis:
+        - name: BeefyVaultV2
+          file: ./abis/BeefyVaultV2.json
+        - name: Strategy
+          file: ./abis/Strategy.json
+        - name: ERC20
+          file: ./abis/ERC20.json
+      eventHandlers:
+        - event: 'Transfer(indexed address,indexed address,uint256)'
+          handler: handleShareTransfer
+      file: ./src/mapping.ts
+  - kind: ethereum/contract
+    name: dopple-ust-lp
+    network: bsc
+    source:
+      address: '0x4Af8ED7c9f5D0C672F71a82c827FC3A02485791F'
       abi: BeefyVaultV2
       startBlock: 2612277
     mapping:
@@ -96,10 +406,196 @@ dataSources:
           handler: handleShareTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: jetswap-wings
+    name: banana-sushi-bnb
     network: bsc
     source:
-      address: '0x5e784882E8D2ac69777713f0e71100741b8aC2F6'
+      address: '0x0DC52004341103FF00C65b9c1370c2c2d125CBc5'
+      abi: BeefyVaultV2
+      startBlock: 2612277
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Vault
+        - Deposit
+        - Withdraw
+        - Harvest
+        - Transfer
+        - AccountVaultBalance
+        - Account
+        - Token
+      abis:
+        - name: BeefyVaultV2
+          file: ./abis/BeefyVaultV2.json
+        - name: Strategy
+          file: ./abis/Strategy.json
+        - name: ERC20
+          file: ./abis/ERC20.json
+      eventHandlers:
+        - event: 'Transfer(indexed address,indexed address,uint256)'
+          handler: handleShareTransfer
+      file: ./src/mapping.ts
+  - kind: ethereum/contract
+    name: banana-dot-bnb
+    network: bsc
+    source:
+      address: '0x036D059Dbf58CB624CfdFDaAbCa6D3f80c2f8b3C'
+      abi: BeefyVaultV2
+      startBlock: 2612277
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Vault
+        - Deposit
+        - Withdraw
+        - Harvest
+        - Transfer
+        - AccountVaultBalance
+        - Account
+        - Token
+      abis:
+        - name: BeefyVaultV2
+          file: ./abis/BeefyVaultV2.json
+        - name: Strategy
+          file: ./abis/Strategy.json
+        - name: ERC20
+          file: ./abis/ERC20.json
+      eventHandlers:
+        - event: 'Transfer(indexed address,indexed address,uint256)'
+          handler: handleShareTransfer
+      file: ./src/mapping.ts
+  - kind: ethereum/contract
+    name: banana-xrp-bnb
+    network: bsc
+    source:
+      address: '0xb8624845cfac1b65da120bd25d0c1a921f8b178d'
+      abi: BeefyVaultV2
+      startBlock: 2612277
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Vault
+        - Deposit
+        - Withdraw
+        - Harvest
+        - Transfer
+        - AccountVaultBalance
+        - Account
+        - Token
+      abis:
+        - name: BeefyVaultV2
+          file: ./abis/BeefyVaultV2.json
+        - name: Strategy
+          file: ./abis/Strategy.json
+        - name: ERC20
+          file: ./abis/ERC20.json
+      eventHandlers:
+        - event: 'Transfer(indexed address,indexed address,uint256)'
+          handler: handleShareTransfer
+      file: ./src/mapping.ts
+  - kind: ethereum/contract
+    name: banana-snx-bnb
+    network: bsc
+    source:
+      address: '0x0e4FCD49Bd0A50D31f321509C8B2e7f21Fb87D26'
+      abi: BeefyVaultV2
+      startBlock: 2612277
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Vault
+        - Deposit
+        - Withdraw
+        - Harvest
+        - Transfer
+        - AccountVaultBalance
+        - Account
+        - Token
+      abis:
+        - name: BeefyVaultV2
+          file: ./abis/BeefyVaultV2.json
+        - name: Strategy
+          file: ./abis/Strategy.json
+        - name: ERC20
+          file: ./abis/ERC20.json
+      eventHandlers:
+        - event: 'Transfer(indexed address,indexed address,uint256)'
+          handler: handleShareTransfer
+      file: ./src/mapping.ts
+  - kind: ethereum/contract
+    name: banana-blz-bnb
+    network: bsc
+    source:
+      address: '0x6081601e62F51d9e956aa704B506E4c202E0E016'
+      abi: BeefyVaultV2
+      startBlock: 2612277
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Vault
+        - Deposit
+        - Withdraw
+        - Harvest
+        - Transfer
+        - AccountVaultBalance
+        - Account
+        - Token
+      abis:
+        - name: BeefyVaultV2
+          file: ./abis/BeefyVaultV2.json
+        - name: Strategy
+          file: ./abis/Strategy.json
+        - name: ERC20
+          file: ./abis/ERC20.json
+      eventHandlers:
+        - event: 'Transfer(indexed address,indexed address,uint256)'
+          handler: handleShareTransfer
+      file: ./src/mapping.ts
+  - kind: ethereum/contract
+    name: cakev2-popen-bnb
+    network: bsc
+    source:
+      address: '0xC1D74e394ed525A780f3a02d6b3716803035e6bE'
+      abi: BeefyVaultV2
+      startBlock: 2612277
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Vault
+        - Deposit
+        - Withdraw
+        - Harvest
+        - Transfer
+        - AccountVaultBalance
+        - Account
+        - Token
+      abis:
+        - name: BeefyVaultV2
+          file: ./abis/BeefyVaultV2.json
+        - name: Strategy
+          file: ./abis/Strategy.json
+        - name: ERC20
+          file: ./abis/ERC20.json
+      eventHandlers:
+        - event: 'Transfer(indexed address,indexed address,uint256)'
+          handler: handleShareTransfer
+      file: ./src/mapping.ts
+  - kind: ethereum/contract
+    name: cakev2-well-busd
+    network: bsc
+    source:
+      address: '0x78B8AfFA682ef34ac92b800715C3AdfF7E2D3879'
       abi: BeefyVaultV2
       startBlock: 2612277
     mapping:
@@ -2297,7 +2793,7 @@ dataSources:
           handler: handleShareTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: ica-ica-btcb
+    name: ica-ica-btcb-eol
     network: bsc
     source:
       address: '0xbf29b8AdaE718A3A372ba90040A9acBD8A5794f4'
@@ -2328,7 +2824,7 @@ dataSources:
           handler: handleShareTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: ica-ica-eth
+    name: ica-ica-eth-eol
     network: bsc
     source:
       address: '0x389e5F8e23e88cA2D971a69b2AAADE264A9DE5Fb'
@@ -2421,7 +2917,7 @@ dataSources:
           handler: handleShareTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: satis-sat-bnb
+    name: satis-sat-bnb-eol
     network: bsc
     source:
       address: '0x81a00F9789041E8CE270fCdd98dB65D8504C990B'
@@ -2452,7 +2948,7 @@ dataSources:
           handler: handleShareTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: satis-sat-busd
+    name: satis-sat-busd-eol
     network: bsc
     source:
       address: '0xF2ce03745790fCE2F707157B008f981caA7c00b2'
@@ -3537,7 +4033,7 @@ dataSources:
           handler: handleShareTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: cakev2-unfi-bnb
+    name: cakev2-unfi-bnb-eol
     network: bsc
     source:
       address: '0x85A95Ab3580d5Cb5DC6cC12DE79939508a2BFc5C'
@@ -3599,7 +4095,7 @@ dataSources:
           handler: handleShareTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: cakev2-yfi-bnb
+    name: cakev2-yfi-bnb-eol
     network: bsc
     source:
       address: '0xF5e6b5adA220F8f62310d2d2D7013103b8e91651'
@@ -3630,7 +4126,7 @@ dataSources:
           handler: handleShareTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: cakev2-fil-bnb
+    name: cakev2-fil-bnb-eol
     network: bsc
     source:
       address: '0x7AA10F621b2A3c7a8421f1369494F6fE263F3D31'
@@ -4157,7 +4653,7 @@ dataSources:
           handler: handleShareTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: cakev2-mamzn-ust
+    name: cakev2-mamzn-ust-eol
     network: bsc
     source:
       address: '0x9B9CB3bCd038B114e6094Ac00Db649a12741E3af'
@@ -4188,7 +4684,7 @@ dataSources:
           handler: handleShareTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: cakev2-mgoogl-ust
+    name: cakev2-mgoogl-ust-eol
     network: bsc
     source:
       address: '0xB623301eF34B30123581975542500f402DCf8d79'
@@ -4219,7 +4715,7 @@ dataSources:
           handler: handleShareTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: cakev2-mnflx-ust
+    name: cakev2-mnflx-ust-eol
     network: bsc
     source:
       address: '0xE2409314Df4708230999F4bE4dE4Ac3cF3d0B08c'
@@ -4250,7 +4746,7 @@ dataSources:
           handler: handleShareTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: cakev2-mtsla-ust
+    name: cakev2-mtsla-ust-eol
     network: bsc
     source:
       address: '0x30E31EA485D5be9E1A63268181e6EF731b9b853f'
@@ -5025,7 +5521,7 @@ dataSources:
           handler: handleShareTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: cakev2-hard-bnb
+    name: cakev2-hard-bnb-eol
     network: bsc
     source:
       address: '0x0ED3d249E81fa29D3Bf807222e195102E5AF9241'
@@ -5118,7 +5614,7 @@ dataSources:
           handler: handleShareTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: cakev2-egld-bnb
+    name: cakev2-egld-bnb-eol
     network: bsc
     source:
       address: '0x99e974465886676C871969aC57607DA4BF29e24a'
@@ -5707,7 +6203,7 @@ dataSources:
           handler: handleShareTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: cakev2-easy-bnb
+    name: cakev2-easy-bnb-eol
     network: bsc
     source:
       address: '0xB1254637809D455Fbc33b901894CbA735Fc5B4a1'
@@ -6451,7 +6947,7 @@ dataSources:
           handler: handleShareTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: cake-broobee-bnb
+    name: cake-broobee-bnb-eol
     network: bsc
     source:
       address: '0xa5F6387fB58AC5268F130bFc2d0A5e53343fB798'
@@ -6482,41 +6978,10 @@ dataSources:
           handler: handleShareTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: cake-tlm-bnb
+    name: cake-tlm-bnb-eol
     network: bsc
     source:
       address: '0x67E7cC5405429D9D7b468c836989B849b5D66543'
-      abi: BeefyVaultV2
-      startBlock: 2612277
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.4
-      language: wasm/assemblyscript
-      entities:
-        - Vault
-        - Deposit
-        - Withdraw
-        - Harvest
-        - Transfer
-        - AccountVaultBalance
-        - Account
-        - Token
-      abis:
-        - name: BeefyVaultV2
-          file: ./abis/BeefyVaultV2.json
-        - name: Strategy
-          file: ./abis/Strategy.json
-        - name: ERC20
-          file: ./abis/ERC20.json
-      eventHandlers:
-        - event: 'Transfer(indexed address,indexed address,uint256)'
-          handler: handleShareTransfer
-      file: ./src/mapping.ts
-  - kind: ethereum/contract
-    name: cake-suter-bnb
-    network: bsc
-    source:
-      address: '0x3d5e4f52fC9c4c7F787b340b7E095b81B1E4458e'
       abi: BeefyVaultV2
       startBlock: 2612277
     mapping:
@@ -6699,7 +7164,7 @@ dataSources:
           handler: handleShareTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: cake-apys-bnb
+    name: cake-apys-bnb-eol
     network: bsc
     source:
       address: '0xc3991d99a73eD1Fd9d28cd4623DD72732745963b'
@@ -7071,7 +7536,7 @@ dataSources:
           handler: handleShareTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: cake-hoo-busd
+    name: cake-hoo-busd-eol
     network: bsc
     source:
       address: '0x9C21d39c1e790A966c81EBf5Db4FE5e8C564d1bF'
@@ -7102,7 +7567,7 @@ dataSources:
           handler: handleShareTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: cake-itam-bnb
+    name: cake-itam-bnb-eol
     network: bsc
     source:
       address: '0x4dD62Fc76fD57175151777e845dfe9E981b87aE7'
@@ -7133,7 +7598,7 @@ dataSources:
           handler: handleShareTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: cake-arpa-bnb
+    name: cake-arpa-bnb-eol
     network: bsc
     source:
       address: '0x6E1D34Bac5d49E9b488D8eadFCB632953263F2eA'
@@ -7164,7 +7629,7 @@ dataSources:
           handler: handleShareTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: mdex-xvs
+    name: mdex-xvs-eol
     network: bsc
     source:
       address: '0x93aBCe226ac5082aD8702681354C48E739eEFDd5'
@@ -7195,7 +7660,7 @@ dataSources:
           handler: handleShareTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: mdex-uni
+    name: mdex-uni-eol
     network: bsc
     source:
       address: '0xC57869A0bDeF07bf4E9Ffdd598Ffc235248987d4'
@@ -7412,7 +7877,7 @@ dataSources:
           handler: handleShareTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: mdex-inj
+    name: mdex-inj-eol
     network: bsc
     source:
       address: '0x5212d0e82CBAD96541454E5227f273Abff986F78'
@@ -7505,7 +7970,7 @@ dataSources:
           handler: handleShareTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: blizzard-xblzd-bnb-old
+    name: blizzard-xblzd-bnb-old-eol
     network: bsc
     source:
       address: '0xF7E3273930D8ffdb967BD5B4afe67aa195DF7347'
@@ -7536,7 +8001,7 @@ dataSources:
           handler: handleShareTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: blizzard-xblzd-busd-old
+    name: blizzard-xblzd-busd-old-eol
     network: bsc
     source:
       address: '0xE4012400f60ffae2584F9D9Ee61Ca65B31A24c7F'
@@ -7598,7 +8063,7 @@ dataSources:
           handler: handleShareTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: blizzard-blzd-bnb
+    name: blizzard-blzd-bnb-eol
     network: bsc
     source:
       address: '0x57e6f78a7e644b8532d8c4f3A354c921709Aa897'
@@ -7629,7 +8094,7 @@ dataSources:
           handler: handleShareTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: blizzard-blzd-busd
+    name: blizzard-blzd-busd-eol
     network: bsc
     source:
       address: '0x1EdfEc6849C54Ee9187539516C6a67ADAcBf9704'
@@ -7691,7 +8156,7 @@ dataSources:
           handler: handleShareTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: auto-cake-bnb
+    name: auto-cake-bnb-eol
     network: bsc
     source:
       address: '0x5DA77c7DBF6dBa1155CF343db06a7D79aaaad9Ee'
@@ -8063,7 +8528,7 @@ dataSources:
           handler: handleShareTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: swamp-cake-bnb
+    name: swamp-cake-bnb-eol
     network: bsc
     source:
       address: '0xe75E9Cc79c2d1dAa00f30991FBB413C8d4a86537'
@@ -8346,68 +8811,6 @@ dataSources:
     network: bsc
     source:
       address: '0x2BE1cB6bc19E4592Beab28DcCfB993E4ad7A43aF'
-      abi: BeefyVaultV2
-      startBlock: 2612277
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.4
-      language: wasm/assemblyscript
-      entities:
-        - Vault
-        - Deposit
-        - Withdraw
-        - Harvest
-        - Transfer
-        - AccountVaultBalance
-        - Account
-        - Token
-      abis:
-        - name: BeefyVaultV2
-          file: ./abis/BeefyVaultV2.json
-        - name: Strategy
-          file: ./abis/Strategy.json
-        - name: ERC20
-          file: ./abis/ERC20.json
-      eventHandlers:
-        - event: 'Transfer(indexed address,indexed address,uint256)'
-          handler: handleShareTransfer
-      file: ./src/mapping.ts
-  - kind: ethereum/contract
-    name: cake-pbtc-bnb
-    network: bsc
-    source:
-      address: '0x1733Ff33036C7D785d0eACDB53138a9Aff8387De'
-      abi: BeefyVaultV2
-      startBlock: 2612277
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.4
-      language: wasm/assemblyscript
-      entities:
-        - Vault
-        - Deposit
-        - Withdraw
-        - Harvest
-        - Transfer
-        - AccountVaultBalance
-        - Account
-        - Token
-      abis:
-        - name: BeefyVaultV2
-          file: ./abis/BeefyVaultV2.json
-        - name: Strategy
-          file: ./abis/Strategy.json
-        - name: ERC20
-          file: ./abis/ERC20.json
-      eventHandlers:
-        - event: 'Transfer(indexed address,indexed address,uint256)'
-          handler: handleShareTransfer
-      file: ./src/mapping.ts
-  - kind: ethereum/contract
-    name: cake-mir-ust
-    network: bsc
-    source:
-      address: '0x8B3898642BC30b0aEF072BA3E43b427a4A2015D8'
       abi: BeefyVaultV2
       startBlock: 2612277
     mapping:
@@ -8873,37 +9276,6 @@ dataSources:
     network: bsc
     source:
       address: '0xd71A3edcdAe126a30960df40CB5247d87980Bf08'
-      abi: BeefyVaultV2
-      startBlock: 2612277
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.4
-      language: wasm/assemblyscript
-      entities:
-        - Vault
-        - Deposit
-        - Withdraw
-        - Harvest
-        - Transfer
-        - AccountVaultBalance
-        - Account
-        - Token
-      abis:
-        - name: BeefyVaultV2
-          file: ./abis/BeefyVaultV2.json
-        - name: Strategy
-          file: ./abis/Strategy.json
-        - name: ERC20
-          file: ./abis/ERC20.json
-      eventHandlers:
-        - event: 'Transfer(indexed address,indexed address,uint256)'
-          handler: handleShareTransfer
-      file: ./src/mapping.ts
-  - kind: ethereum/contract
-    name: cake-bbadger-btcb
-    network: bsc
-    source:
-      address: '0x9fBa2fc7505CE6801ADCF23146310187CecfcE47'
       abi: BeefyVaultV2
       startBlock: 2612277
     mapping:
@@ -9675,72 +10047,10 @@ dataSources:
           handler: handleShareTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: jul-uni-bnb
-    network: bsc
-    source:
-      address: '0xd9fe7Ff89C5303E439a14a5155F7F48E34F28518'
-      abi: BeefyVaultV2
-      startBlock: 2612277
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.4
-      language: wasm/assemblyscript
-      entities:
-        - Vault
-        - Deposit
-        - Withdraw
-        - Harvest
-        - Transfer
-        - AccountVaultBalance
-        - Account
-        - Token
-      abis:
-        - name: BeefyVaultV2
-          file: ./abis/BeefyVaultV2.json
-        - name: Strategy
-          file: ./abis/Strategy.json
-        - name: ERC20
-          file: ./abis/ERC20.json
-      eventHandlers:
-        - event: 'Transfer(indexed address,indexed address,uint256)'
-          handler: handleShareTransfer
-      file: ./src/mapping.ts
-  - kind: ethereum/contract
     name: auto-comp-eth
     network: bsc
     source:
       address: '0x907b3848593df20243eCb5D954b06a028092b0D6'
-      abi: BeefyVaultV2
-      startBlock: 2612277
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.4
-      language: wasm/assemblyscript
-      entities:
-        - Vault
-        - Deposit
-        - Withdraw
-        - Harvest
-        - Transfer
-        - AccountVaultBalance
-        - Account
-        - Token
-      abis:
-        - name: BeefyVaultV2
-          file: ./abis/BeefyVaultV2.json
-        - name: Strategy
-          file: ./abis/Strategy.json
-        - name: ERC20
-          file: ./abis/ERC20.json
-      eventHandlers:
-        - event: 'Transfer(indexed address,indexed address,uint256)'
-          handler: handleShareTransfer
-      file: ./src/mapping.ts
-  - kind: ethereum/contract
-    name: auto-hget-bnb
-    network: bsc
-    source:
-      address: '0x8f210015B2BbDd39e6d62278992136aCAfd09691'
       abi: BeefyVaultV2
       startBlock: 2612277
     mapping:
@@ -10326,7 +10636,7 @@ dataSources:
           handler: handleShareTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: 1inch-1inch-bnb
+    name: 1inch-1inch-bnb-eol
     network: bsc
     source:
       address: '0x2139E4CaDA8438a41F4009ff07D09Db29A62De04'
@@ -10392,37 +10702,6 @@ dataSources:
     network: bsc
     source:
       address: '0x310DF4c1DD93337A165AeF8e3d45A770CaaDe3b6'
-      abi: BeefyVaultV2
-      startBlock: 2612277
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.4
-      language: wasm/assemblyscript
-      entities:
-        - Vault
-        - Deposit
-        - Withdraw
-        - Harvest
-        - Transfer
-        - AccountVaultBalance
-        - Account
-        - Token
-      abis:
-        - name: BeefyVaultV2
-          file: ./abis/BeefyVaultV2.json
-        - name: Strategy
-          file: ./abis/Strategy.json
-        - name: ERC20
-          file: ./abis/ERC20.json
-      eventHandlers:
-        - event: 'Transfer(indexed address,indexed address,uint256)'
-          handler: handleShareTransfer
-      file: ./src/mapping.ts
-  - kind: ethereum/contract
-    name: cake-usdc-busd
-    network: bsc
-    source:
-      address: '0x0666bDF7187307890D2ACF092493cCEA51A8CD0b'
       abi: BeefyVaultV2
       startBlock: 2612277
     mapping:
@@ -11442,7 +11721,7 @@ dataSources:
           handler: handleShareTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: auto-cake-old
+    name: auto-cake-old-eol
     network: bsc
     source:
       address: '0x895CF1E805cBd86355caC101aE9B252c806Dc59b'
@@ -11473,7 +11752,7 @@ dataSources:
           handler: handleShareTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: auto-wbnb-old
+    name: auto-wbnb-old-eol
     network: bsc
     source:
       address: '0x8136C5EE816fD80b80C9679e785F37EBdf2199eE'
@@ -13240,37 +13519,6 @@ dataSources:
           handler: handleShareTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: cake-band-bnb
-    network: bsc
-    source:
-      address: '0x9368165eCB0BB16d214fc63fDFcd07fbBa21AbBB'
-      abi: BeefyVaultV2
-      startBlock: 2612277
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.4
-      language: wasm/assemblyscript
-      entities:
-        - Vault
-        - Deposit
-        - Withdraw
-        - Harvest
-        - Transfer
-        - AccountVaultBalance
-        - Account
-        - Token
-      abis:
-        - name: BeefyVaultV2
-          file: ./abis/BeefyVaultV2.json
-        - name: Strategy
-          file: ./abis/Strategy.json
-        - name: ERC20
-          file: ./abis/ERC20.json
-      eventHandlers:
-        - event: 'Transfer(indexed address,indexed address,uint256)'
-          handler: handleShareTransfer
-      file: ./src/mapping.ts
-  - kind: ethereum/contract
     name: cake-atom-bnb
     network: bsc
     source:
@@ -14139,37 +14387,6 @@ dataSources:
           handler: handleShareTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: street-eos-bnb
-    network: bsc
-    source:
-      address: '0xd4572009c7580DEfa0251FFD811b04386Dd41570'
-      abi: BeefyVaultV2
-      startBlock: 2612277
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.4
-      language: wasm/assemblyscript
-      entities:
-        - Vault
-        - Deposit
-        - Withdraw
-        - Harvest
-        - Transfer
-        - AccountVaultBalance
-        - Account
-        - Token
-      abis:
-        - name: BeefyVaultV2
-          file: ./abis/BeefyVaultV2.json
-        - name: Strategy
-          file: ./abis/Strategy.json
-        - name: ERC20
-          file: ./abis/ERC20.json
-      eventHandlers:
-        - event: 'Transfer(indexed address,indexed address,uint256)'
-          handler: handleShareTransfer
-      file: ./src/mapping.ts
-  - kind: ethereum/contract
     name: street-drugs-bnb-v1
     network: bsc
     source:
@@ -14325,7 +14542,7 @@ dataSources:
           handler: handleShareTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: cake-cake-bnb
+    name: cake-cake-bnb-eol
     network: bsc
     source:
       address: '0x502AB55Cf22f38c4fd8663dEE041A96B72264c53'
@@ -14360,37 +14577,6 @@ dataSources:
     network: bsc
     source:
       address: '0xaB9C4a0fD179315b005a5f6D3793cb30Af718152'
-      abi: BeefyVaultV2
-      startBlock: 2612277
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.4
-      language: wasm/assemblyscript
-      entities:
-        - Vault
-        - Deposit
-        - Withdraw
-        - Harvest
-        - Transfer
-        - AccountVaultBalance
-        - Account
-        - Token
-      abis:
-        - name: BeefyVaultV2
-          file: ./abis/BeefyVaultV2.json
-        - name: Strategy
-          file: ./abis/Strategy.json
-        - name: ERC20
-          file: ./abis/ERC20.json
-      eventHandlers:
-        - event: 'Transfer(indexed address,indexed address,uint256)'
-          handler: handleShareTransfer
-      file: ./src/mapping.ts
-  - kind: ethereum/contract
-    name: cake-usdt-bnb
-    network: bsc
-    source:
-      address: '0x72F758cb79cA71CE9010dc9c0fA0155431435B72'
       abi: BeefyVaultV2
       startBlock: 2612277
     mapping:
@@ -14453,37 +14639,6 @@ dataSources:
     network: bsc
     source:
       address: '0x348039C69B5fD7b333CE0a17E8361E501D2e3fa8'
-      abi: BeefyVaultV2
-      startBlock: 2612277
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.4
-      language: wasm/assemblyscript
-      entities:
-        - Vault
-        - Deposit
-        - Withdraw
-        - Harvest
-        - Transfer
-        - AccountVaultBalance
-        - Account
-        - Token
-      abis:
-        - name: BeefyVaultV2
-          file: ./abis/BeefyVaultV2.json
-        - name: Strategy
-          file: ./abis/Strategy.json
-        - name: ERC20
-          file: ./abis/ERC20.json
-      eventHandlers:
-        - event: 'Transfer(indexed address,indexed address,uint256)'
-          handler: handleShareTransfer
-      file: ./src/mapping.ts
-  - kind: ethereum/contract
-    name: cake-eth-bnb
-    network: bsc
-    source:
-      address: '0x1CfEAef83Bb688Ac5926df1feEB8F05244054C07'
       abi: BeefyVaultV2
       startBlock: 2612277
     mapping:
@@ -14779,6 +14934,8 @@ templates:
         - Account
         - Token
       abis:
+        - name: BeefyVaultV2
+          file: ./abis/BeefyVaultV2.json
         - name: Strategy
           file: ./abis/Strategy.json
       eventHandlers:

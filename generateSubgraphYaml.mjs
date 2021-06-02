@@ -93,6 +93,10 @@ let subgraphYaml = {
         ],
         abis: [
           {
+            name: 'BeefyVaultV2',
+            file: './abis/BeefyVaultV2.json'
+          },
+          {
             name: 'Strategy',
             file: './abis/Strategy.json'
           }

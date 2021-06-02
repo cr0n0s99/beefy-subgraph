@@ -1,4 +1,4 @@
-import { Address, BigInt } from '@graphprotocol/graph-ts';
+import { Address, BigInt, log } from '@graphprotocol/graph-ts';
 
 import { Transfer } from '../../generated/BIFI Maxi/BeefyVaultV2';
 import { Vault } from '../../generated/schema';
@@ -88,12 +88,18 @@ function handleTransfer(
 }
 
 export function handleShareTransfer(event: Transfer): void {
+  log.debug('Starting handleShareTransfer Event', [])
+
   let transactionId = event.address
     .toHexString()
     .concat('-')
     .concat(event.transaction.hash.toHexString())
     .concat('-')
     .concat(event.logIndex.toString());
+
+  log.debug(transactionId, [])
+
+  log.debug("Getting or creating vault, fromAccount, toAccount, underlyingToken and shareToken", [])
 
   let vault = getOrCreateVault(event.address);
   // let vaultContract = V1Contract.bind(event.address);
@@ -103,6 +109,8 @@ export function handleShareTransfer(event: Transfer): void {
   let shareToken = getOrCreateToken(Address.fromString(vault.shareToken));
 
   let amount: BigInt;
+
+  log.debug("Getting or creating AccountVaultBalances and Transactions", [])
 
   if (vault.totalSupplyRaw != BIGINT_ZERO) {
     amount = vault.vaultBalanceRaw.times(event.params.value).div(vault.totalSupplyRaw);
@@ -131,7 +139,10 @@ export function handleShareTransfer(event: Transfer): void {
     event.params.from.toHexString() != ZERO_ADDRESS &&
     event.params.to.toHexString() != ZERO_ADDRESS
   ) {
+
+    log.debug("Starting handleTransfer", [])
     handleTransfer(event, amount, fromAccount.id, toAccount.id, vault, transactionId);
+    log.debug("Completed handleTransfer", [])
 
     // Update toAccount totals and balances
     toAccountBalance.account = toAccount.id;
@@ -164,6 +175,8 @@ export function handleShareTransfer(event: Transfer): void {
       shareToken.decimals,
     );
 
+    log.debug("Updated toAccountBalance", [])
+
     // Update fromAccount totals and balances
     fromAccountBalance.account = toAccount.id;
     fromAccountBalance.vault = vault.id;
@@ -195,12 +208,18 @@ export function handleShareTransfer(event: Transfer): void {
       shareToken.decimals,
     );
 
+    log.debug("Updated fromAccountBalance", [])
+
     toAccountBalance.save();
     fromAccountBalance.save();
+
+    log.debug("Saving accountBalances", [])
   }
 
   // Vault deposit
   if (event.params.from.toHexString() == ZERO_ADDRESS) {
+
+    log.debug("Starting from ZERO_ADDRESS block", [])
     handleDeposit(event, amount, toAccount.id, vault, transactionId);
     // We should fact check that the amount deposited is exactly the same as calculated
     // If it's not, we should use a callHandler for deposit(_amount)
@@ -242,10 +261,14 @@ export function handleShareTransfer(event: Transfer): void {
     vault.totalSharesMinted = toDecimal(vault.totalSharesMintedRaw, shareToken.decimals);
 
     toAccountBalance.save();
+
+    log.debug("Saved from ZERO_ADDRESS block", [])
   }
 
   // Vault withdraw
   if (event.params.to.toHexString() == ZERO_ADDRESS) {
+
+    log.debug("Starting to ZERO_ADDRESS block", [])
     handleWithdrawal(event, amount, fromAccount.id, vault, transactionId);
     // We should fact check that the amount withdrawn is exactly the same as calculated
     // If it's not, we should use a callHandler for withdraw(_amount)
@@ -289,8 +312,10 @@ export function handleShareTransfer(event: Transfer): void {
     vault.totalSharesBurned = toDecimal(vault.totalSharesBurnedRaw, shareToken.decimals);
 
     fromAccountBalance.save();
+    log.debug("Saved to ZERO_ADDRESS block", [])
   }
 
+  log.debug("Updating deposits and shares", [])
   vault.netDepositsRaw = vault.totalDepositedRaw.minus(vault.totalWithdrawnRaw);
   vault.totalActiveSharesRaw = vault.totalSharesMintedRaw.minus(
     vault.totalSharesBurnedRaw,
@@ -299,7 +324,10 @@ export function handleShareTransfer(event: Transfer): void {
   vault.netDeposits = toDecimal(vault.netDepositsRaw, underlyingToken.decimals);
   vault.totalActiveShares = toDecimal(vault.totalActiveSharesRaw, shareToken.decimals);
 
+  log.debug("Saving vault, to and from Accounts", [])
   vault.save();
   fromAccount.save();
   toAccount.save();
+
+  log.debug("Finished handleShareTransfer", [])
 }
